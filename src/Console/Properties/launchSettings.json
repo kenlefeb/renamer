@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Console": {
+      "commandName": "Project",
+      "commandLineArgs": "rename \"~/downloads/My.Show.S01E01.Episode.Title.mkv\""
+    }
+  }
+}
