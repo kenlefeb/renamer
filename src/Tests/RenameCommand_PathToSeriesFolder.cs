@@ -13,7 +13,7 @@ using Xunit.Abstractions;
 
 namespace Tests
 {
-    public class RenameCommand_PathToSeriesFile
+    public class RenameCommand_PathToSeriesFolder
     {
         private readonly ITestOutputHelper _output;
         private readonly ICacheLogger<Command> _logger;
@@ -21,14 +21,14 @@ namespace Tests
         private readonly Console.Commands.Rename.Options _options;
         private readonly Console.Commands.Rename.Command _command;
 
-        public RenameCommand_PathToSeriesFile(ITestOutputHelper output)
+        public RenameCommand_PathToSeriesFolder(ITestOutputHelper output)
         {
             // arrange
             _output = output;
             _logger = _output.BuildLoggerFor<Console.Commands.Rename.Command>();
             _options = new Console.Commands.Rename.Options
             {
-                Path = "~/downloads/My.Show.S01.E01.Episode.Title.1080p.BDRIP.SCENE-REPACK",
+                Path = "~/downloads/My.Show.S01.E01.Episode.Title.1080p.BDRIP.SCENE-REPACK/",
             };
             _renamer = A.Fake<IRenameFoldersAndFiles>();
             _command = new Console.Commands.Rename.Command(_logger, _renamer);
