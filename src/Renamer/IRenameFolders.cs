@@ -5,7 +5,7 @@
 
 namespace Renamer
 {
-    public interface IRenameFoldersAndFiles
+    public interface IRenameFolders
     {
         void Rename(string path);
     }

@@ -1,0 +1,8 @@
+{
+  Title: 'My.Show.',
+  Quality: '1080p',
+  Encoding: 'BDRIP',
+  Container: '',
+  Remainder: 'SCENE-REPACK',
+  FileName: 'My.Show.S01E01.1080p.BDRIP.SCENE-REPACK'
+}

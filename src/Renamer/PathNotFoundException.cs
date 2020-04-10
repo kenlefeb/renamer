@@ -11,4 +11,14 @@ namespace Renamer
     {
         public PathNotFoundException(string path) : base($"The file or folder \"{path}\" was not found.") { }
     }
+
+    public class FileNotFoundException : Exception
+    {
+        public FileNotFoundException(string path) : base($"The file \"{path}\" was not found.") { }
+    }
+
+    public class FolderNotFoundException : Exception
+    {
+        public FolderNotFoundException(string path) : base($"The folder \"{path}\" was not found.") { }
+    }
 }
