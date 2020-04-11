@@ -18,9 +18,9 @@ namespace Tests
         private readonly ITestOutputHelper _output;
         private readonly ICacheLogger<Renamer.Renamer> _logger;
         private readonly IRenameFoldersAndFiles _renamer;
-        private IRenameFolders _folders;
-        private IRenameFiles _files;
-        private IFileSystem _filesystem;
+        private readonly IRenameFolders _folders;
+        private readonly IRenameFiles _files;
+        private readonly IFileSystem _filesystem;
 
         public Renamer_PathToSeriesFolder(ITestOutputHelper output)
         {
