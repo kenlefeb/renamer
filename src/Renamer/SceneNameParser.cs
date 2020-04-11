@@ -41,18 +41,13 @@ namespace Tests
             return new Episode
             {
                 Title = match.Groups["title"].Value,
-                Number = ParseEpisodeNumber(match.Groups["episode"].Value),
+                Number = new EpisodeNumber(match.Groups["episode"].Value),
                 Quality = match.Groups["quality"].Value,
                 Encoding = match.Groups["encoding"].Value,
                 Container = match.Groups["container"].Value,
                 Remainder = match.Groups["remainder"].Value,
                 FileName = name,
             };
-        }
-
-        private EpisodeNumber ParseEpisodeNumber(string text)
-        {
-            return new EpisodeNumber(text);
         }
     }
 }

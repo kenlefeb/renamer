@@ -7,12 +7,8 @@ namespace Renamer
     [Serializable]
     internal class AmbiguousSceneNameException : Exception
     {
-        private IFileInfo file;
-        private IDirectoryInfo folder;
-
-        public AmbiguousSceneNameException()
-        {
-        }
+        private IFileInfo? file;
+        private IDirectoryInfo? folder;
 
         public AmbiguousSceneNameException(IFileInfo file)
         {

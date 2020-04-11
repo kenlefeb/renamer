@@ -2,7 +2,7 @@
 
 namespace Tests
 {
-    internal class EpisodeNumber
+    public class EpisodeNumber
     {
         public EpisodeNumber(string value)
         {

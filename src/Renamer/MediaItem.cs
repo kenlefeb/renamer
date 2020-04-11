@@ -13,12 +13,12 @@ namespace Renamer
 
     public class Episode : MediaItem
     {
-        public string Title { get; internal set; }
-        public string Quality { get; internal set; }
-        public string Encoding { get; internal set; }
-        public string Container { get; internal set; }
-        public string Remainder { get; internal set; }
-        public string FileName { get; internal set; }
-        internal EpisodeNumber Number { get; set; }
+        public string Title { get; set; } = string.Empty;
+        public string Quality { get; set; } = string.Empty;
+        public string Encoding { get; set; } = string.Empty;
+        public string Container { get; set; } = string.Empty;
+        public string Remainder { get; set; } = string.Empty;
+        public string FileName { get; set; } = string.Empty;
+        public EpisodeNumber Number { get; set; } = new EpisodeNumber("S00E00");
     }
 }

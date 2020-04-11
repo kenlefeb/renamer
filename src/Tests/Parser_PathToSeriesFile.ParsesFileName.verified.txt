@@ -4,5 +4,9 @@
   Encoding: 'BDRIP',
   Container: '',
   Remainder: 'SCENE-REPACK',
-  FileName: 'My.Show.S01E01.1080p.BDRIP.SCENE-REPACK'
+  FileName: 'My.Show.S01E01.1080p.BDRIP.SCENE-REPACK',
+  Number: {
+    Season: 1,
+    Episode: 1
+  }
 }
