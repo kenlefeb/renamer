@@ -2,6 +2,8 @@
 using Renamer;
 using System;
 using System.Collections.Generic;
+using System.IO.Abstractions;
+using System.IO.Abstractions.TestingHelpers;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +36,29 @@ namespace Tests
 
             // assert
             return Verify(actual);
+        }
+
+        [Theory]
+        [MemberData(nameof(TestFiles))]
+        public Task ParsesTestFileNames(IFileSystem filesystem, string path)
+        {
+            // arrange
+            var fileinfo = filesystem.FileInfo.FromFileName(path);
+            
+            // act
+            var actual = _parser.Parse(fileinfo.Name);
+            
+            // assert
+            return Verify(actual);
+        }
+
+        public static IEnumerable<object[]> TestFiles()
+        {
+            var files = TestData.BuildDownloadsFolder();
+            foreach (var path in files.AllFiles.Take(3))
+            {
+                yield return new object[] {files, path};
+            }
         }
     }
 }

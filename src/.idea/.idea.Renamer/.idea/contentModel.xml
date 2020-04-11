@@ -67,12 +67,12 @@
           </e>
         </e>
         <e p="Parser_PathToSeriesFile.cs" t="Include" />
-        <e p="Parser_PathToSeriesFile.ParsesFileName.received.txt" t="Include" />
         <e p="Parser_PathToSeriesFile.ParsesFileName.verified.txt" t="Include" />
         <e p="RenameCommand_PathToSeriesFile.cs" t="Include" />
         <e p="RenameCommand_PathToSeriesFolder.cs" t="Include" />
         <e p="Renamer_PathToSeriesFile.cs" t="Include" />
         <e p="Renamer_PathToSeriesFolder.cs" t="Include" />
+        <e p="TestData.cs" t="Include" />
         <e p="Tests.csproj" t="IncludeRecursive" />
       </e>
     </e>

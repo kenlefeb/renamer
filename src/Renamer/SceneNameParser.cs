@@ -6,8 +6,15 @@ using System.Text.RegularExpressions;
 
 namespace Tests
 {
+    /// <summary>
+    /// The rules for input names are best documented here:
+    /// http://scenegrouplist.com/scene_info_About_releases_hdarll.php
+    /// 
+    /// </summary>
     public class SceneNameParser : IParseSceneNames
     {
+        private const string ParseComponents = @"(?<series>.+?)(?<episode>S\d+E\d+)[\-\.\s](?<remainder>.*)";
+        
         private ILogger<SceneNameParser> logger;
 
         public SceneNameParser(ILogger<SceneNameParser> logger)
@@ -36,7 +43,7 @@ namespace Tests
 
         private Episode ParseEpisode(string name)
         {
-            var regex = new Regex(@"(?<title>.+?)(?<episode>S\d+E\d+)[\-\.\s]((?<quality>(720|1080)[pi]?)[\-\.\s])?((?<encoding>(BluRay|HEVC|HDTV|BDRIP|DVDRIP))[\.\s])?((?<container>(MKV|x265|x264|XviD))[\-\.\s])?(?<remainder>.*)");
+            var regex = new Regex(@"(?<series>.+?)(?<episode>S\d+E\d+)[\-\.\s](?<remainder>.*)");
             var match = regex.Match(name);
             return new Episode
             {
