@@ -11,6 +11,6 @@ namespace Console.Commands.Rename
     public class Options
     {
         [Value(0)]
-        public string Path { get; set; }
+        public string Path { get; set; } = string.Empty;
     }
 }

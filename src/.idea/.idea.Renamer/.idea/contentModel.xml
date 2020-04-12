@@ -30,12 +30,15 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="renamer" t="IncludeRecursive">
         <e p="AmbiguousSceneNameException.cs" t="Include" />
+        <e p="BadEpisodeFileException.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="EpisodeNumber.cs" t="Include" />
         <e p="FailedToParseSceneNameException.cs" t="Include" />
         <e p="FileRenamer.cs" t="Include" />
         <e p="FolderRenamer.cs" t="Include" />
+        <e p="IMoveMediaFiles.cs" t="Include" />
         <e p="IParseSceneNames.cs" t="Include" />
+        <e p="IPopulateMetadataForEpisodes.cs" t="Include" />
         <e p="IRenameFiles.cs" t="Include" />
         <e p="IRenameFolders.cs" t="Include" />
         <e p="IRenameFoldersAndFiles.cs" t="Include" />
@@ -55,6 +58,7 @@
         <e p="Renamer.cs" t="Include" />
         <e p="Renamer.csproj" t="IncludeRecursive" />
         <e p="SceneNameParser.cs" t="Include" />
+        <e p="SeriesFileRenamer.cs" t="Include" />
       </e>
       <e p="Renamer.sln" t="IncludeFlat" />
       <e p="Tests" t="IncludeRecursive">

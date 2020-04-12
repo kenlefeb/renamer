@@ -13,7 +13,7 @@ namespace Tests
     /// </summary>
     public class SceneNameParser : IParseSceneNames
     {
-        private const string ParseComponents = @"(?<series>.+?)(?<episode>S\d+E\d+)[\-\.\s](?<remainder>.*)";
+        private static Regex ParseEpisodeFile = new Regex(@"^(?<series>.*)\.(?<number>S\d+E\d+)\.(?<tags>.*)(?<extension>\.(mkv|avi|mp4|divx|mov|vob|wmv|xvid))$", RegexOptions.IgnoreCase | RegexOptions.ExplicitCapture);
         
         private ILogger<SceneNameParser> logger;
 
@@ -35,24 +35,20 @@ namespace Tests
 
         public MediaItem Parse(string name)
         {
-            var regex = new Regex(@"(?<title>.+?)(?<episode>S\d+E\d+)[\-\.\s]((?<quality>(720|1080)[pi]?)[\-\.\s])?((?<encoding>(BluRay|HEVC|HDTV|BDRIP|DVDRIP))[\.\s])?((?<container>(MKV|x265|x264|XviD))[\-\.\s])?(?<remainder>.*)");
-            if (regex.IsMatch(name))
+            if (ParseEpisodeFile.IsMatch(name))
                 return ParseEpisode(name);
             throw new FailedToParseSceneNameException(name);
         }
 
         private Episode ParseEpisode(string name)
         {
-            var regex = new Regex(@"(?<series>.+?)(?<episode>S\d+E\d+)[\-\.\s](?<remainder>.*)");
-            var match = regex.Match(name);
+            var match = ParseEpisodeFile.Match(name);
             return new Episode
             {
-                Title = match.Groups["title"].Value,
-                Number = new EpisodeNumber(match.Groups["episode"].Value),
-                Quality = match.Groups["quality"].Value,
-                Encoding = match.Groups["encoding"].Value,
-                Container = match.Groups["container"].Value,
-                Remainder = match.Groups["remainder"].Value,
+                Title = match.Groups["series"].Value,
+                Number = new EpisodeNumber(match.Groups["number"].Value),
+                Extension = match.Groups["extension"].Value,
+                Tags = match.Groups["tags"].Value,
                 FileName = name,
             };
         }

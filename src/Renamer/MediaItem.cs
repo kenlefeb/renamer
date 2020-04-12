@@ -20,5 +20,7 @@ namespace Renamer
         public string Remainder { get; set; } = string.Empty;
         public string FileName { get; set; } = string.Empty;
         public EpisodeNumber Number { get; set; } = new EpisodeNumber("S00E00");
+        public string Extension { get; set; } = string.Empty;
+        public string Tags { get; set; } = string.Empty;
     }
 }

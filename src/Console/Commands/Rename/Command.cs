@@ -18,7 +18,7 @@ namespace Console.Commands.Rename
 
         private string DetermineCommandName(Command command)
         {
-            var @namespace = command.GetType().Namespace;
+            var @namespace = command.GetType().Namespace ?? "Console.Commands.CommandName";
             var period = @namespace.LastIndexOf('.');
             return @namespace.Substring(period + 1);
         }

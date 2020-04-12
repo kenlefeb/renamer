@@ -4,6 +4,6 @@ namespace Renamer
 {
     public interface IRenameSeriesFiles
     {
-        void Rename(IFileInfo file);
+        IFileInfo Rename(IFileInfo file);
     }
 }
